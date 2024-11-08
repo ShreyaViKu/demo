@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Registered Users</h2>
+    <div id="userList"></div>
+    
+    <script>
+        const userListDiv = document.getElementById("userList");
+        const users = JSON.parse(localStorage.getItem("users")) || [];
+
+        if (users.length > 0) {
+            users.forEach((user, index) => {
+                const userDiv = document.createElement("div");
+                userDiv.innerHTML = `<strong>User ${index + 1}:</strong> ${user.username}, ${user.email}`;
+                userListDiv.appendChild(userDiv);
+            });
+        } else {
+            userListDiv.innerHTML = "<p>No registered users found.</p>";
+        }
+    </script>
+</body>
+</html>

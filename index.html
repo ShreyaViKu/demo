@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Radiance Orphanage</title>
+
+    <!-- jQuery Mobile CSS and JS -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        .staff-photo, .review-photo {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        .staff-member, .review {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Home Page -->
+    <div data-role="page" id="home">
+        <div data-role="header" data-theme="b">
+            <h1>Radiance Orphanage</h1>
+            <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>
+        </div>
+
+        <div data-role="content">
+            <!-- Banner Image -->
+            <div>
+                <img src="or.jpg" alt="Radiance Orphanage" style="display: block; margin: auto; width: 30%;">
+            </div>
+
+            <!-- Introduction -->
+            <h2>Welcome to Radiance Orphanage</h2>
+            <p>
+                At Radiance Orphanage, we provide a loving and nurturing environment for children in need. Our mission is to offer care, education, and support to help these children build a brighter future.
+            </p>
+
+            <!-- Navigation Buttons -->
+            <div>
+                <a href="#contact" data-role="button" data-icon="mail">Contact Us</a>
+                <a href="#adoption" data-role="button" data-icon="plus">Adoption Enquiry</a>
+                <a href="#reviews" data-role="button" data-icon="star">Reviews</a>
+                <a href="#staff" data-role="button" data-icon="user">Our Staff</a>
+            </div>
+        </div>
+
+        <div data-role="footer" data-theme="b">
+            <h4>Radiance Orphanage - Making a Difference</h4>
+        </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div data-role="page" id="contact">
+        <div data-role="header" data-theme="b">
+            <a href="#home" data-icon="home">Home</a>
+            <h1>Contact Us</h1>
+            <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>
+        </div>
+
+        <div data-role="content">
+            <h2>Get in Touch</h2>
+            <form action="/submit_form" method="post">
+                <label for="name">Full Name:</label>
+                <input type="text" name="name" id="name" placeholder="Enter your name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="Enter your email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" name="phone" id="phone" placeholder="Enter your phone number" required>
+
+                <label for="message">Message:</label>
+                <textarea name="message" id="message" placeholder="Write your message" required></textarea>
+
+                <button type="submit" data-role="button">Submit</button>
+            </form>
+            <a href="#home" data-role="button" data-inline="true">Back to Home</a>
+        </div>
+
+        <div data-role="footer" data-theme="b">
+            <h4>Radiance Orphanage - Contact Us Anytime</h4>
+        </div>
+    </div>
+
+    <!-- Adoption Enquiry Page -->
+    <div data-role="page" id="adoption">
+        <div data-role="header" data-theme="b">
+            <a href="#home" data-icon="home">Home</a>
+            <h1>Adoption Enquiry</h1>
+            <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>
+        </div>
+
+        <div data-role="content">
+            <!-- Adoption Image -->
+            <div>
+                <img src="OIP.jpg" alt="Adoption" style="display: block; margin: auto; width: 30%;">
+            </div>
+
+            <h2>Interested in Adoption?</h2>
+            <p>Please fill out the form below and we will contact you soon.</p>
+            <form action="/adoption_enquiry" method="post">
+                <label for="adopt-name">Full Name:</label>
+                <input type="text" name="adopt-name" id="adopt-name" placeholder="Enter your name" required>
+
+                <label for="adopt-email">Email:</label>
+                <input type="email" name="adopt-email" id="adopt-email" placeholder="Enter your email" required>
+
+                <label for="adopt-phone">Phone Number:</label>
+                <input type="tel" name="adopt-phone" id="adopt-phone" placeholder="Enter your phone number" required>
+
+                <label for="adopt-message">Why are you interested in adoption?</label>
+                <textarea name="adopt-message" id="adopt-message" placeholder="Write your reason" required></textarea>
+
+                <button type="submit" data-role="button">Submit Enquiry</button>
+            </form>
+            <a href="#home" data-role="button" data-inline="true">Back to Home</a>
+        </div>
+
+        <div data-role="footer" data-theme="b">
+            <h4>Radiance Orphanage - Adoption Enquiry</h4>
+        </div>
+    </div>
+
+    <!-- Reviews Page -->
+    <div data-role="page" id="reviews">
+        <div data-role="header" data-theme="b">
+            <a href="#home" data-icon="home">Home</a>
+            <h1>Reviews</h1>
+            <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>
+        </div>
+
+        <div data-role="content">
+            <h2>What People Are Saying</h2>
+
+            <!-- Review 1 -->
+            <div class="review">
+                <img src="p.jpg" alt="Reviewer Photo" class="review-photo">
+                <div>
+                    <h3>Priya Sharma</h3>
+                    <p>"Radiance Orphanage has been a beacon of hope for so many children. Their dedication and love are truly inspiring."</p>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="review">
+                <img src="r.jpg" alt="Reviewer Photo" class="review-photo">
+                <div>
+                    <h3>Rahul Verma</h3>
+                    <p>"The staff at Radiance Orphanage are compassionate and hardworking. They create a warm and nurturing environment for the children."</p>
+                </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="review">
+                <img src="a.jpg" alt="Reviewer Photo" class="review-photo">
+                <div>
+                    <h3>Anita Gupta</h3>
+                    <p>"Adopting through Radiance Orphanage was a smooth and fulfilling experience. I am grateful for the support they provided."</p>
+                </div>
+            </div>
+
+            <a href="#home" data-role="button" data-inline="true">Back to Home</a>
+        </div>
+
+        <div data-role="footer" data-theme="b">
+            <h4>Radiance Orphanage - Trusted by Many</h4>
+        </div>
+    </div>
+
+    <!-- Staff Page -->
+    <div data-role="page" id="staff">
+        <div data-role="header" data-theme="b">
+            <a href="#home" data-icon="home">Home</a>
+            <h1>Our Staff</h1>
+            <a href="#menu" data-icon="bars" data-iconpos="notext">Menu</a>
+        </div>
+
+        <div data-role="content">
+            <h2>Meet Our Dedicated Team</h2>
+
+            <!-- Staff Member 1 -->
+            <div class="staff-member">
+                <img src="s.jpg" alt="Staff Photo" class="staff-photo">
+                <div>
+                    <h3>Sophia Mehta</h3>
+                    <p><strong>Director</strong></p>
+                    <p>Sophia has over 20 years of experience in child welfare and leads our team with compassion and expertise.</p>
+                </div>
+            </div>
+
+            <!-- Staff Member 2 -->
+            <div class="staff-member">
+                <img src="arun.jpg" alt="Staff Photo" class="staff-photo">
+                <div>
+                    <h3>Arjun Patel</h3>
+                    <p><strong>Coordinator</strong></p>
+                    <p>Arjun manages our day-to-day operations and ensures that each child receives the care they need.</p>
+                </div>
+            </div>
+
+            <!-- Staff Member 3 -->
+            <div class="staff-member">
+                <img src="f.jpg" alt="Staff Photo" class="staff-photo">
+                <div>
+                    <h3>Meera Singh</h3>
+                    <p><strong>Counselor</strong></p>
+                    <p>Meera provides emotional support and counseling to help our children thrive.</p>
+                </div>
+            </div>
+
+            <!-- Add more staff members as needed -->
+
+            <a href="#home" data-role="button" data-inline="true">Back to Home</a>
+        </div>
+
+        <div data-role="footer" data-theme="b">
+            <h4>Radiance Orphanage - Our Family</h4>
+        </div>
+    </div>
+
+    <!-- Menu Panel -->
+    <div data-role="panel" id="menu" data-display="overlay">
+        <ul data-role="listview">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#adoption">Adoption Enquiry</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#staff">Our Staff</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
